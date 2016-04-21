@@ -8,7 +8,8 @@ CMD="docker run \
        --user=$(id -u $(whoami)):$(id -g $(whoami)) \
        --volume $HOME:/home/developer \
        --volume $(pwd):/pwd \
-       kurron/docker-consul:0.6.4"
+       --volume /var/run/docker.sock:/var/run/docker.sock \
+       kurron/docker-docker-compose:1.7.0"
 
 #echo $CMD
 eval $CMD $*
